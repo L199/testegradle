@@ -1,6 +1,7 @@
 plugins {
 	id 'org.springframework.boot' version '2.7.5'
 	id 'io.spring.dependency-management' version '1.0.13.RELEASE'
+	id "org.sonarqube" version "4.0.0.2929"
 	id 'java'
 }
 
@@ -8,7 +9,14 @@ group = 'com.br.itau.app'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 
-
+sonarqube {
+	properties {
+		property "sonar.projectKey", "your_project_key"
+		property "sonar.organization", "your_organization"
+		property "sonar.host.url", "https://sonarcloud.io"
+		property "sonar.login", project.findProperty("sonar.login") ?: System.getenv("SONAR_TOKEN")
+	}
+}
 
 repositories {
 	mavenCentral()
