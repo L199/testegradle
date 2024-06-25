@@ -11,8 +11,8 @@ sourceCompatibility = '17'
 
 sonarqube {
 	properties {
-		property "sonar.projectKey", "your_project_key"
-		property "sonar.organization", "your_organization"
+		property "sonar.projectKey", "teste"
+		property "sonar.organization", "teste"
 		property "sonar.host.url", "https://sonarcloud.io"
 		property "sonar.login", project.findProperty("sonar.login") ?: System.getenv("SONAR_TOKEN")
 	}
